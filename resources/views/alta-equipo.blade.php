@@ -6,6 +6,8 @@
     <title>Alta Equipo</title>
 </head>
 <body>
-    <form action="{{ route('altaEquipos') }}" method="post"></form>
+    <form action="{{ route('altaEquipos') }}" method="post">
+        
+    </form>
 </body>
 </html>
