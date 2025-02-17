@@ -6,8 +6,12 @@
     <title>Alta Equipo</title>
 </head>
 <body>
-    <form action="{{ route('altaEquipos') }}" method="post">
-        
+    <form action="{{ route('altaEquipo') }}" method="get">
+        <label for="nombre">Nombre del Equipo</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="numSocios">Número de Socios</label>
+        <input type="text" name="numSocios" id="numSocios">
+        <input type="submit" value="Dar de Alta">
     </form>
 </body>
 </html>

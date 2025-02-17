@@ -11,8 +11,8 @@
     <ul>
         <li><a href="{{ route('verEquipos') }}">Lista de Equipos Registrados</a></li>
         <li><a href="{{ route('verJugadores') }}">Lista de Jugadores Por Equipo</a></li>
-        <li><a href="{{ route('altaJugador') }}">Dar de Alta un Jugador</a></li>
-        <li><a href="{{ route('altaEquipo') }}">Dar de Alta un Equipo</a></li>
+        <li><a href="{{ route('formJugador') }}">Dar de Alta un Jugador</a></li>
+        <li><a href="{{ route('formEquipo') }}">Dar de Alta un Equipo</a></li>
     </ul>
 </body>
 

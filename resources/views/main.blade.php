@@ -7,8 +7,8 @@
 </head>
 <body>
     <ul>
-        <li><a href="{{ route('equipo-view') }}"></a></li>
-        <li><a href="{{ route('torneo-view') }}"></a></li>
+        <li><a href="{{ route('equipo-view') }}">Equipos</a></li>
+        <li><a href="{{ route('torneo-view') }}">Torneos</a></li>
     </ul>
 </body>
 </html>

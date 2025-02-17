@@ -18,17 +18,37 @@ class EquipoController extends Controller
 
     public function altaEquipo(Request $r){
         $equipo = new Equipo();
-        $equipo->nombre = $r->get('nombre_equipo');
-        $equipo->num_socios = $r->get('num_socios');
-        $equipo->save();
+        $equipo->nombre = $r->get('nombre');
+        $equipo->num_socios = $r->get('numSocios');
+        if ($equipo->save()) {
+            $msg = true;
+        }else{
+            $msg = false;
+        }
+        $data['msg']= $msg;
+        $data['obj'] = "Equipo";
+        return view('comprobacion',$data);;
     }
 
-    public function addJugador(Request $r){
+    public function altaJugador(Request $r){
         $jugador = new Jugador();
         $jugador->nombre = $r->get('nombre');
         $jugador->apellidos = $r->get('apellidos');
         $jugador->dorsal = $r->get('dorsal');
-        $jugador->save();
+        if($jugador->save()){
+            $msg = true;
+        }else {
+            $msg = false;
+        }
+        $data['msg'] = $msg;
+        $data['obj'] = "Jugador";
+        return view('comprobacion',$data);
+    }
+
+    public function getEquiposJugadores(){
+        $equipos = Equipo::all();
+        $data['equipos'] = $equipos;
+        return view('listar-equipos-jugadores',$data);
     }
 
     public function getJugadores($id_equipo){
