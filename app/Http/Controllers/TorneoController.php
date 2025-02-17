@@ -21,4 +21,33 @@ class TorneoController extends Controller
         return view('comprobacion',$data);
     }
 
+    public function selectTorneoAnho(Request $request)
+{
+    $torneoNombre = $request->input('torneo');
+    $anho = $request->input('anho');
+
+    $torneo = Torneo::where('nombre', $torneoNombre)->first();
+
+    if (!$torneo) {
+        return redirect()->back()->with('error', 'Torneo no encontrado');
+    }
+
+    $equipos = $torneo->equipos()->wherePivot('anho', $anho)->get();
+
+    $data = [
+        'torneo' => $torneo,
+        'equipos' => $equipos,
+        'anho' => $anho
+    ];
+
+    return view('listar-equipos-torneo', $data);
+}
+
+public function formTorneoAnho(){
+    $torneos = Torneo::all();
+    $data['torneos']= $torneos;
+    return view('seleccionar-anho-torneo',$data);
+}
+
+
 }

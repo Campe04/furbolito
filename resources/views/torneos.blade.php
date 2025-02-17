@@ -7,8 +7,8 @@
 </head>
 <body>
     <ul>
-        <li><a href="{{ route('altaTorneo') }}">Dar de Alta un Torneo</a></li>
-        <li><a href="{{ route('verEquiposTorneo') }}">Equipos de Torneo por Año</a></li>
+        <li><a href="{{ route('formTorneo') }}">Dar de Alta un Torneo</a></li>
+        <li><a href="{{ route('formTorneoAnho') }}">Equipos de Torneo por Año</a></li>
         <li><a href="{{ route('agregarEquipoTorneo') }}">Agregar Equipo a Torneo</a></li>
     </ul>
 </body>
