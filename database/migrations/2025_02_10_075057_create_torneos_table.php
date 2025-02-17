@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombre',50);
-            $table->boolean('nacional');
+            $table->boolean('nacional')->default(0);
         });
     }
 
